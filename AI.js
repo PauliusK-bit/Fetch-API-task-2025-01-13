@@ -13,18 +13,18 @@ form.addEventListener("submit", (event) => {
   fetch(`https://api.agify.io/?name=${inputValue}`)
     .then((res) => res.json())
     .then((data) => {
-      let ageOutput = `${inputValue} is ${data.age} years old.`;
+      let ageOutput = `${inputValue} is ${data.age} years old and he is from`;
 
       fetch(`https://api.nationalize.io/?name=${inputValue}`)
         .then((res) => res.json())
         .then((data) => {
           let countryId = data.country[0].country_id;
-          let nationalityOutput = `${inputValue} is from ${countryId}.`;
+          let nationalityOutput = `${countryId} also ${inputValue} is a`;
 
           fetch(`https://api.genderize.io/?name=${inputValue}`)
             .then((res) => res.json())
             .then((data) => {
-              let genderOutput = `${inputValue} is a ${data.gender}.`;
+              let genderOutput = `${data.gender}.`;
 
               outputText.textContent = `${ageOutput} ${nationalityOutput}  ${genderOutput}`;
             });
