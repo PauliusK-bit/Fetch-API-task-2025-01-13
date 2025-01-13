@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="dogs.css" />
   </head>
   <body>
     <form id="dogs">
       <div class="form-control">
-        <label for="category">Choose a dog breed</label>
-        <select name="category" id="category"></select>
+        <label class="focus-in-contract" for="category"
+          >Choose a dog breed</label
+        >
+        <select class="select-button" name="category" id="category"></select>
       </div>
 
-      <button type="submit">Get picture by choosing a dog breed</button>
+      <button class="btn" type="submit">
+        Get picture by choosing a dog breed
+      </button>
     </form>
     <div id="picture"></div>
 
